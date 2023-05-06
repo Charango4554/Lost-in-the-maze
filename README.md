@@ -2,19 +2,33 @@
 This is a university board game project in which the player must reach the exit square by avoiding obstacles and mines.
 
 1-First, the program must initialize the parameters of the game, such as the initial stone credit, the dimensions of the board and the percentages of squares in each category.
+
+
 2-The program then fills the board by randomly choosing the location of the different squares according to the defined percentages. 3-The passage type squares are also linked to their respective destinations.
+
+
 4-The player starts the game in the initial position, which is defined by the program.
+
+
 5-At each turn, the program asks the player where he wants to move. If the move is valid, the player is moved to the new square.
+
+
 6-
 If the square contains a mine, the player loses and the game is over.
 If the square contains an obstacle, the player cannot enter it and loses a stone.
 If the square contains stones, the player retrieves them and adds them to his stone credit.
 If the square is a passage, the player is teleported to the corresponding destination square.
 If the square is empty, the player can continue his movement without any problem.
+
+
 7-If the player has any stones left, he can choose to throw one in a direction to get information about the neighboring squares. The result will depend on which square the stone hits, as explained in the general description.
 If the player reaches the finish square, he wins the game.
 If the player has no more stones and cannot advance any further, the game is over.
+
+
 8-The program displays the result of the game, i.e. whether the player has won or lost and the final score in stones.
+
+
 9-The player can choose to start the game again with the same settings or change some settings for a new game.
 
 --------------------------------------
