@@ -1,5 +1,7 @@
 # Lost-in-the-maze
 This is a university board game project in which the player must reach the exit square by avoiding obstacles and mines.
+The Java.Lire class was created by the professors of my university (http://jl.baril.u-bourgogne.fr/instajava.pdf)
+
 
 1-First, the program must initialize the parameters of the game, such as the initial stone credit, the dimensions of the board and the percentages of squares in each category.
 
@@ -47,6 +49,8 @@ If the player has no more stones and cannot advance any further, the game is ove
 
 --------------------------------------
 Il s'agit d'un projet universitaire de jeu de société dans lequel le joueur doit atteindre la case de sortie en évitant les obstacles et les mines.
+La classe Java.Lire a été crée par les professeur de mon université (http://jl.baril.u-bourgogne.fr/instajava.pdf)
+
 
 1-Tout d'abord, le programme doit initialiser les paramètres du jeu, tels que le crédit initial en pierres, les dimensions du plateau et les pourcentages de cases de chaque catégorie.
 
