@@ -1,0 +1,152 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package exploration;
+/*
+Ce code définit une classe "Joueur" qui représente un joueur dans un jeu. La classe a plusieurs attributs tels que 
+le nom du joueur, la position actuelle du joueur sur un plateau de jeu, le nombre de pierres que le joueur possède, 
+un booléen indiquant si le joueur a gagné ou perdu, etc.
+*/
+
+public class Joueur
+{
+
+    private String nom;
+    private Case position;
+    private int nbPierres;
+    private boolean gagnant;
+    private boolean perdant; 
+     
+     
+     
+     
+    public String getNom()
+    {
+        return nom;
+    }
+
+    public void setNom(String nom)
+    {
+        this.nom = nom;
+    }
+
+   
+    /**
+     * Restitue la position courante du joueur
+     * @return la référence à la case où se trouve le joueur
+     */
+    public Case getPosition()
+    {
+        return position;
+    }
+   
+    public void setPosition(Case position)
+    {
+        this.position = position;
+        /* ajout de code éventuel */
+    }
+   
+    /**
+     * Restitue le nombre de pierres actuellement en possession du joueur
+     * @return un entier qui représente un nombre de pierres
+     */
+    public int getNbPierres()
+    {
+        return this.nbPierres;
+    }
+
+    public void setNbPierres(int nbPierres)
+    {
+        this.nbPierres = nbPierres;
+    }
+
+   
+
+    /**
+     * Restitue vrai si le joueur est gagnant (il est arrivé en bas à droite du plateau)
+     * @return un booléen qui indique si le joueur a gagné
+     */
+    public boolean isGagnant()
+    {
+        return this.gagnant;
+    }
+
+    public void setGagnant(boolean gagnant)
+    {
+        this.gagnant = gagnant;
+    }
+    
+
+    /**
+     * Restitue vrai si le joueur a perdu (explosion sur une mine)
+     * @return un booléen qui indique si le joueur a perdu
+     */
+    public boolean isPerdant()
+    {
+        return this.perdant;
+    }
+
+    public void setPerdant(boolean perdant)
+    {
+        this.perdant = perdant;
+    }
+    
+
+    public Joueur(String nom, Case depart, int nbPierres)
+    {
+        this.setNom(nom);
+        this.setPosition(depart);
+        this.setNbPierres(nbPierres);
+        this.setGagnant(false);
+        this.setPerdant(false);
+    }
+
+    public void avance(Direction d)
+    {
+        try {this.getPosition().propageJ(this, d);}catch(Exception e){
+            System.out.println("vous ne pouvez pas avancé cas c'est une bordure du plateau ");
+        }
+    }
+
+    public void lancePierre(Direction d)
+      {
+        
+     // le joueur lance une pierre dans la case voisine à partir de sa position dans la direction d
+           if(this.nbPierres>0)
+           this.getPosition().propageP(this, d);
+        
+        else        
+            System.out.println("Vous n'avez plus de pierre");                 
+       }
+
+    /**
+     * Incrémentation du nombre de pierres de n unités
+     * Sert quand le joueur arrive dans une case qui contient des pierres
+     * @param n entier qui représente le nombre de pierres à ajouter
+     */
+    public void incNbPierres(int n)
+    {
+        this.setNbPierres(this.getNbPierres() + n);
+    }
+
+    /**
+     * Décrémentation du nombre de pierres d'une unité lorsqu'une pierre est perdue
+     */
+    public void decNbPierres()
+    { 
+            this.setNbPierres(this.getNbPierres() - 1);
+    }
+    public void perd()
+    {
+        this.setPerdant(true);
+    }
+    public void gagne()
+    {
+        this.setGagnant(true);
+    }
+
+    public String toString(){
+        return "♜";
+    }
+}
